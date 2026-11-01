@@ -1,0 +1,37 @@
+<view class="page page-history">
+  <view class="history-head">
+    <text class="history-head-title">浏览记录</text>
+    <view class="history-clear" wx:if="{{count}}" bindtap="onClear">清空</view>
+  </view>
+  <view class="history-head-sub" wx:if="{{count}}">共 {{count}} 件，最近看过的排在前面</view>
+
+  <view class="empty" wx:if="{{loading}}">
+    <view class="empty-main">加载中…</view>
+  </view>
+
+  <view class="rec-list" wx:if="{{!loading && records.length}}">
+    <view class="rec-item card"
+          wx:for="{{records}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="goDetail">
+      <view class="cover rec-thumb" style="background:{{item.coverBg}}">
+        <image class="cover-img" wx:if="{{item.coverImage}}" src="{{item.coverImage}}" mode="aspectFill" />
+        <text class="cover-char" wx:else>{{item.coverChar}}</text>
+      </view>
+      <view class="rec-body">
+        <view class="rec-title">{{item.title}}</view>
+        <view class="rec-price">{{item.priceText}}</view>
+        <view class="rec-meta">
+          <text class="rec-campus">{{item.campus}}</text>
+          <text class="rec-time">{{item.viewedText}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{!loading && !records.length}}">
+    <view class="empty-main">还没有浏览过商品</view>
+    <view class="empty-sub">在首页点开一件闲置，就会记在这里</view>
+  </view>
+</view>

@@ -1,0 +1,127 @@
+<view class="page page-mine">
+  <view class="mine-head">
+    <view class="mine-avatar">{{user.avatarChar}}</view>
+    <view class="mine-info">
+      <view class="mine-name">{{user.nickname}}</view>
+      <view class="mine-meta">
+        <text class="badge">{{user.loginText}}</text>
+        <text class="mine-meta-item">学号 {{user.studentIdMasked}}</text>
+        <text class="mine-meta-item">{{user.campus}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="mine-account-actions">
+    <view class="btn-ghost mine-account-btn" bindtap="onSwitchAccount">切换账号</view>
+    <view class="btn-ghost mine-account-btn" bindtap="onLogout">退出登录</view>
+  </view>
+
+  <view class="mine-entry card" bindtap="goMessages">
+    <view class="mine-entry-body">
+      <view class="mine-entry-title">消息中心</view>
+      <view class="mine-entry-sub">和买家 / 卖家的私信都在这里</view>
+    </view>
+    <view class="mine-entry-right">
+      <text class="mine-entry-badge" wx:if="{{unreadTotal}}">{{unreadText}}</text>
+      <text class="mine-entry-arrow">›</text>
+    </view>
+  </view>
+
+  <view class="mine-entry card" bindtap="goHistory">
+    <view class="mine-entry-body">
+      <view class="mine-entry-title">浏览记录</view>
+      <view class="mine-entry-sub">最近看过的闲置都在这里</view>
+    </view>
+    <view class="mine-entry-right">
+      <text class="mine-entry-count">{{historyCount}} 件</text>
+      <text class="mine-entry-arrow">›</text>
+    </view>
+  </view>
+
+  <view class="mine-stats">
+    <view class="stat">
+      <text class="stat-num">{{postsCount}}</text>
+      <text class="stat-label">我发布的</text>
+    </view>
+    <view class="stat">
+      <text class="stat-num">{{favoritesCount}}</text>
+      <text class="stat-label">我收藏的</text>
+    </view>
+  </view>
+
+  <view class="mine-body">
+    <view class="mine-section">
+      <view class="section-head">
+        <text class="section-title">我发布的</text>
+        <text class="section-count">共 {{postsCount}} 件</text>
+      </view>
+
+      <view class="row-list" wx:if="{{posts.length}}">
+        <view class="row-item card" wx:for="{{posts}}" wx:key="id">
+          <view class="row-link" data-id="{{item.id}}" bindtap="goDetail">
+            <view class="cover row-thumb" style="background:{{item.coverBg}}">
+              <image class="cover-img" wx:if="{{item.coverImage}}" src="{{item.coverImage}}" mode="aspectFill" />
+              <text class="cover-char" wx:else>{{item.coverChar}}</text>
+            </view>
+            <view class="row-body">
+              <view class="row-title">{{item.title}}</view>
+              <view class="row-price">{{item.priceText}}</view>
+              <view class="row-meta">
+                <text class="state-tag state-{{item.statusClass}}">{{item.statusText}}</text>
+                <text>{{item.timeText}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="row-actions">
+            <view class="btn-ghost small {{item.actionDisabled ? 'is-disabled' : ''}}"
+                  data-id="{{item.id}}"
+                  data-status="{{item.statusOn ? 'off' : 'on'}}"
+                  bindtap="onToggleStatus">{{item.actionText}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="empty" wx:else>
+        <view class="empty-main">还没有发布过闲置</view>
+        <view class="empty-sub">点底部「发布」试着发一条</view>
+      </view>
+    </view>
+
+    <view class="mine-section">
+      <view class="section-head">
+        <text class="section-title">我收藏的</text>
+        <text class="section-count">共 {{favoritesCount}} 件</text>
+      </view>
+
+      <view class="row-list" wx:if="{{favorites.length}}">
+        <view class="row-item card" wx:for="{{favorites}}" wx:key="id">
+          <view class="row-link" data-id="{{item.id}}" bindtap="goDetail">
+            <view class="cover row-thumb" style="background:{{item.coverBg}}">
+              <image class="cover-img" wx:if="{{item.coverImage}}" src="{{item.coverImage}}" mode="aspectFill" />
+              <text class="cover-char" wx:else>{{item.coverChar}}</text>
+            </view>
+            <view class="row-body">
+              <view class="row-title">{{item.title}}</view>
+              <view class="row-price">{{item.priceText}}</view>
+              <view class="row-meta">
+                <text>{{item.campus}} · {{item.sellerName}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="row-actions">
+            <view class="btn-ghost small" data-id="{{item.id}}" bindtap="onUnfavorite">取消收藏</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="empty" wx:else>
+        <view class="empty-main">还没有收藏任何物品</view>
+        <view class="empty-sub">在详情页点「收藏」就会出现在这里</view>
+      </view>
+    </view>
+
+    <view class="course-note">
+      <text>本项目为中国海洋大学《软件工程》课程实践作业，非学校官方平台，不涉及任何真实交易服务。</text>
+    </view>
+  </view>
+</view>
