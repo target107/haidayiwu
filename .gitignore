@@ -1,0 +1,18 @@
+# 微信开发者工具个人配置（每人不同，不要提交）
+project.private.config.json
+miniprogram/project.private.config.json
+
+# 依赖
+node_modules/
+
+# 后端运行时数据（每人本地不同）
+server/data/db.json
+server/data/db.json.tmp
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+

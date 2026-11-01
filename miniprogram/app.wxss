@@ -1,0 +1,147 @@
+/* 海大易物 · 全局样式
+   750rpx 设计宽度：H5 版按 375px 设计，这里一律 ×2 换成 rpx。
+   配色沿用 web/css/style.css：
+   主色 #0f766e / 主色深 #115e59 / 主色浅 #ccfbf1 / 价格 #d9480f
+   背景 #f4f6f7 / 卡片 #ffffff / 描边 #e6eaee / 次要文字 #6b7280 / 危险 #dc2626 */
+
+page {
+  background: #f4f6f7;
+  color: #1f2933;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.page {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 卡片：白底圆角 + 轻投影 */
+.card {
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(15, 23, 42, 0.06);
+}
+
+/* 封面：有图显示图片，没图显示色块 + 标题首字（列表 / 详情 / 我的共用） */
+.cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+
+.cover-img {
+  width: 100%;
+  height: 100%;
+}
+
+.cover-char {
+  font-size: 52rpx;
+  font-weight: 600;
+  color: rgba(15, 23, 42, 0.32);
+}
+
+/* 按钮（用 view 实现，不引第三方组件库） */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22rpx 36rpx;
+  border-radius: 999rpx;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.btn-primary.small {
+  padding: 16rpx 28rpx;
+  font-size: 26rpx;
+}
+
+.btn-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22rpx 36rpx;
+  border: 1rpx solid #e6eaee;
+  border-radius: 999rpx;
+  background: #ffffff;
+  color: #1f2933;
+  font-size: 30rpx;
+}
+
+.btn-ghost.small {
+  padding: 12rpx 24rpx;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+}
+
+.btn-ghost.is-fav {
+  border-color: #fdba74;
+  background: #fff7ed;
+  color: #f97316;
+}
+
+/* 空状态 */
+.empty {
+  padding: 96rpx 48rpx;
+  text-align: center;
+}
+
+.empty-main {
+  font-size: 28rpx;
+  color: #6b7280;
+}
+
+.empty-sub {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  color: #9aa2ab;
+}
+
+/* 表单字段（发布 / 登录共用） */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28rpx;
+}
+
+.field-label {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #1f2933;
+}
+
+.req {
+  margin-left: 4rpx;
+  color: #dc2626;
+}
+
+.field-input {
+  width: 100%;
+  min-height: 88rpx;
+  margin-top: 12rpx;
+  padding: 20rpx 24rpx;
+  border: 1rpx solid #e6eaee;
+  border-radius: 20rpx;
+  background: #ffffff;
+  font-size: 28rpx;
+  color: #1f2933;
+  box-sizing: border-box;
+}
+
+.field-error {
+  min-height: 32rpx;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #dc2626;
+}
+
+.field.is-invalid .field-input {
+  border-color: #dc2626;
+  background: #fff5f5;
+}
