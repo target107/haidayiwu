@@ -1,0 +1,80 @@
+<view class="page page-detail">
+  <view class="empty" wx:if="{{loading}}">
+    <view class="empty-main">加载中…</view>
+  </view>
+
+  <view class="empty" wx:if="{{notFound}}">
+    <view class="empty-main">物品不存在或已被删除</view>
+    <view class="empty-sub">返回首页看看其它闲置吧</view>
+  </view>
+
+  <block wx:if="{{item}}">
+    <view class="cover detail-cover" style="background:{{item.coverBg}}">
+      <image class="cover-img" wx:if="{{item.coverImage}}" src="{{item.coverImage}}" mode="aspectFill" />
+      <text class="cover-char" wx:else>{{item.coverChar}}</text>
+    </view>
+
+    <view class="detail-main">
+      <view class="detail-title-row">
+        <view class="detail-title">{{item.title}}</view>
+        <text class="state-tag state-{{statusClass}}" wx:if="{{statusTag}}">{{statusTag}}</text>
+      </view>
+
+      <view class="detail-price-row">
+        <text class="detail-price">{{item.priceText}}</text>
+        <text class="detail-views">浏览 {{item.views}}</text>
+      </view>
+
+      <view class="attr-list card">
+        <view class="attr-row">
+          <text class="attr-key">成色</text>
+          <text class="attr-value">{{item.condition}}</text>
+        </view>
+        <view class="attr-row">
+          <text class="attr-key">分类</text>
+          <text class="attr-value">{{item.category}}</text>
+        </view>
+        <view class="attr-row">
+          <text class="attr-key">校区地点</text>
+          <text class="attr-value">{{item.campus}}</text>
+        </view>
+        <view class="attr-row">
+          <text class="attr-key">发布时间</text>
+          <text class="attr-value">{{item.timeText}}</text>
+        </view>
+        <view class="attr-row">
+          <text class="attr-key">状态</text>
+          <text class="attr-value">{{item.statusText}}</text>
+        </view>
+      </view>
+
+      <view class="seller-card card">
+        <view class="seller-avatar">{{item.sellerChar}}</view>
+        <view class="seller-info">
+          <view class="seller-name">{{item.sellerName}}{{mine ? '（我）' : ''}}</view>
+          <view class="seller-note">{{sellerNote}}</view>
+        </view>
+        <view class="btn-ghost small" wx:if="{{canContact}}" bindtap="goChat">私信</view>
+      </view>
+
+      <view class="desc-block card">
+        <view class="desc-title">物品描述</view>
+        <text class="desc-text">{{descText}}</text>
+      </view>
+    </view>
+  </block>
+
+  <view class="detail-bar" wx:if="{{item}}">
+    <view class="safe-tip">{{safeTip}}</view>
+    <view class="btn-ghost home-btn" bindtap="goHome">返回首页</view>
+    <view class="detail-actions">
+      <view class="btn-ghost fav-btn {{favorite ? 'is-fav' : ''}}" bindtap="onToggleFavorite">
+        <text class="fav-star">★</text>
+        <text>{{favoriteText}}</text>
+      </view>
+      <view class="btn-primary detail-contact" wx:if="{{canContact}}" bindtap="goChat">联系卖家</view>
+      <view class="self-tag" wx:elif="{{mine}}">这是你发布的物品</view>
+      <view class="self-tag" wx:else>{{statusTag}}，不再接受洽谈</view>
+    </view>
+  </view>
+</view>

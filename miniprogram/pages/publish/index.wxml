@@ -1,0 +1,84 @@
+<view class="page page-publish">
+  <view class="form">
+    <view class="field {{errors.title ? 'is-invalid' : ''}}">
+      <text class="field-label">标题<text class="req">*</text></text>
+      <input class="field-input"
+             value="{{title}}"
+             maxlength="30"
+             placeholder="例如：高等数学同济第七版 上下册"
+             bindinput="onTitleInput" />
+      <view class="field-error">{{errors.title}}</view>
+    </view>
+
+    <view class="field">
+      <text class="field-label">描述</text>
+      <textarea class="field-input field-textarea"
+                value="{{desc}}"
+                maxlength="200"
+                placeholder="新旧程度、使用时长、交易方式等"
+                bindinput="onDescInput"></textarea>
+    </view>
+
+    <view class="field {{errors.price ? 'is-invalid' : ''}}">
+      <text class="field-label">价格<text class="req">*</text></text>
+      <input class="field-input"
+             value="{{price}}"
+             type="digit"
+             placeholder="单位：元，例如 25"
+             bindinput="onPriceInput" />
+      <view class="field-error">{{errors.price}}</view>
+    </view>
+
+    <view class="field {{errors.category ? 'is-invalid' : ''}}">
+      <text class="field-label">分类<text class="req">*</text></text>
+      <picker class="field-input field-picker"
+              mode="selector"
+              range="{{categories}}"
+              value="{{categoryIndex < 0 ? 0 : categoryIndex}}"
+              bindchange="onCategoryChange">
+        <text class="{{categoryIndex < 0 ? 'picker-placeholder' : 'picker-value'}}">{{categoryText}}</text>
+        <text class="picker-arrow">▾</text>
+      </picker>
+      <view class="field-error">{{errors.category}}</view>
+    </view>
+
+    <view class="field">
+      <text class="field-label">成色</text>
+      <picker class="field-input field-picker"
+              mode="selector"
+              range="{{conditions}}"
+              value="{{conditionIndex}}"
+              bindchange="onConditionChange">
+        <text class="picker-value">{{conditionText}}</text>
+        <text class="picker-arrow">▾</text>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="field-label">校区地点</text>
+      <picker class="field-input field-picker"
+              mode="selector"
+              range="{{campuses}}"
+              value="{{campusIndex}}"
+              bindchange="onCampusChange">
+        <text class="picker-value">{{campusText}}</text>
+        <text class="picker-arrow">▾</text>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="field-label">图片</text>
+      <view class="image-picker" bindtap="onChooseImage">
+        <text class="image-hint">点此选择图片，会在本地压缩后随商品保存，不上传服务器</text>
+      </view>
+      <view class="image-preview {{imagePath ? 'has-image' : ''}}">
+        <image class="image-preview-img" wx:if="{{imagePath}}" src="{{imagePath}}" mode="aspectFit" bindtap="onRemoveImage" />
+        <text class="image-preview-text" wx:else>未选择图片</text>
+      </view>
+    </view>
+
+    <view class="form-tip">{{formTip}}</view>
+
+    <view class="btn-primary submit-btn" bindtap="onSubmit">{{submitting ? '发布中…' : '发布闲置'}}</view>
+  </view>
+</view>
