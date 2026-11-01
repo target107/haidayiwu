@@ -1,0 +1,56 @@
+<view class="page page-chat">
+  <view class="empty" wx:if="{{loading}}">
+    <view class="empty-main">加载中…</view>
+  </view>
+
+  <view class="empty" wx:if="{{notFound}}">
+    <view class="empty-main">物品不存在，无法开始私信</view>
+    <view class="empty-sub">返回首页再看看</view>
+  </view>
+
+  <view class="empty" wx:if="{{selfItem}}">
+    <view class="empty-main">这是你发布的物品</view>
+    <view class="empty-sub">自己不能给自己发私信，等买家来找你聊</view>
+  </view>
+
+  <block wx:if="{{!loading && !notFound && !selfItem}}">
+    <view class="chat-head">
+      <view class="chat-title">{{isSeller ? buyerName : sellerName}}</view>
+      <view class="chat-sub">{{itemTitle}}</view>
+    </view>
+
+    <view class="chat-hint">{{safeTip}}</view>
+
+    <view class="chat-sold-bar" wx:if="{{canMarkSold}}">
+      <view class="btn-primary small" bindtap="onMarkSold">确认交易完成</view>
+    </view>
+
+    <scroll-view class="chat-list" scroll-y scroll-into-view="{{scrollTarget}}" scroll-with-animation>
+      <view wx:for="{{messages}}" wx:key="anchor" id="{{item.anchor}}">
+        <view class="msg {{item.isMe ? 'msg-me' : 'msg-seller'}}">
+          <view class="msg-avatar">{{item.avatar}}</view>
+          <view class="msg-body">
+            <view class="msg-bubble">{{item.text}}</view>
+            <text class="msg-time">{{item.timeText}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="empty" wx:if="{{!messages.length}}">
+        <view class="empty-main">还没有消息，发一句话试试</view>
+        <view class="empty-sub">约在校区公共区域当面交易更安全</view>
+      </view>
+    </scroll-view>
+
+    <view class="chat-input-bar">
+      <input class="chat-input"
+             value="{{inputValue}}"
+             maxlength="200"
+             confirm-type="send"
+             placeholder="说点什么…"
+             bindinput="onInput"
+             bindconfirm="onSend" />
+      <view class="btn-primary small send-btn" bindtap="onSend">发送</view>
+    </view>
+  </block>
+</view>
