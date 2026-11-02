@@ -1,0 +1,88 @@
+/* 注册：品牌区 + 一张表单卡片 + 底部「已有账号？返回登录」
+   配色沿用全局主色 #0f766e，尺寸一律 rpx */
+
+.page-register {
+  display: flex;
+  flex-direction: column;
+  padding: 56rpx 40rpx 48rpx;
+  box-sizing: border-box;
+}
+
+.register-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.register-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 30rpx;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 48rpx;
+  font-weight: 700;
+}
+
+.register-name {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+}
+
+.register-sub {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #6b7280;
+}
+
+.register-card {
+  padding: 36rpx 32rpx 32rpx;
+}
+
+/* 选择器：沿用发布页的写法（.field-input 打底，内部左右分栏） */
+.field-picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker-value {
+  font-size: 28rpx;
+  color: #1f2933;
+}
+
+.picker-arrow {
+  margin-left: 16rpx;
+  font-size: 24rpx;
+  color: #9aa2ab;
+}
+
+.register-btn {
+  margin-top: 12rpx;
+}
+
+.register-foot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36rpx;
+}
+
+.register-foot-text {
+  font-size: 26rpx;
+  color: #6b7280;
+}
+
+.register-foot-link {
+  padding: 12rpx 8rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #0f766e;
+}

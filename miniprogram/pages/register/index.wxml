@@ -1,0 +1,76 @@
+<view class="page page-register">
+  <view class="register-brand">
+    <view class="register-logo">易</view>
+    <view class="register-name">{{appName}}</view>
+    <view class="register-sub">注册后即可发布闲置、收藏和收发私信</view>
+  </view>
+
+  <view class="register-card card">
+    <view class="field">
+      <text class="field-label">学号<text class="req">*</text></text>
+      <input class="field-input"
+             value="{{studentId}}"
+             type="number"
+             maxlength="12"
+             placeholder="12 位学号"
+             bindinput="onStudentIdInput" />
+    </view>
+
+    <view class="field">
+      <text class="field-label">姓名<text class="req">*</text></text>
+      <input class="field-input"
+             value="{{realName}}"
+             maxlength="20"
+             placeholder="与学籍一致的真实姓名"
+             bindinput="onRealNameInput" />
+    </view>
+
+    <view class="field">
+      <text class="field-label">昵称<text class="req">*</text></text>
+      <input class="field-input"
+             value="{{nickname}}"
+             maxlength="12"
+             placeholder="1-12 个字，默认同姓名"
+             bindinput="onNicknameInput" />
+    </view>
+
+    <view class="field">
+      <text class="field-label">校区<text class="req">*</text></text>
+      <picker class="field-input field-picker"
+              mode="selector"
+              range="{{campuses}}"
+              value="{{campusIndex}}"
+              bindchange="onCampusChange">
+        <text class="picker-value">{{campusText}}</text>
+        <text class="picker-arrow">▾</text>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="field-label">密码<text class="req">*</text></text>
+      <input class="field-input"
+             value="{{password}}"
+             password="true"
+             maxlength="32"
+             placeholder="至少 6 位"
+             bindinput="onPasswordInput" />
+    </view>
+
+    <view class="field">
+      <text class="field-label">确认密码<text class="req">*</text></text>
+      <input class="field-input"
+             value="{{confirmPassword}}"
+             password="true"
+             maxlength="32"
+             placeholder="再输入一次密码"
+             bindinput="onConfirmPasswordInput" />
+    </view>
+
+    <view class="btn-primary register-btn" bindtap="onSubmit">{{submitting ? '注册中…' : '注册'}}</view>
+  </view>
+
+  <view class="register-foot">
+    <text class="register-foot-text">已有账号？</text>
+    <text class="register-foot-link" bindtap="onBackToLogin">返回登录</text>
+  </view>
+</view>
