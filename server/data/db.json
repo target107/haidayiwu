@@ -1,0 +1,435 @@
+{
+  "items": [
+    {
+      "id": "i_mw67ohpngi2s",
+      "title": "函数",
+      "desc": "心",
+      "price": 21,
+      "category": "教材书籍",
+      "condition": "全新",
+      "campus": "崂山校区·北海苑",
+      "sellerName": "张三",
+      "sellerId": "u_zhangsan",
+      "coverColor": "#fbcfe8",
+      "coverImage": null,
+      "createdAt": 1794044341931,
+      "status": "on",
+      "views": 2
+    },
+    {
+      "id": "i_mw65fp13xlfq",
+      "title": "高数",
+      "desc": "新",
+      "price": 22222,
+      "category": "教材书籍",
+      "condition": "轻微使用痕迹",
+      "campus": "崂山校区·东海苑",
+      "sellerName": "等哈就",
+      "sellerId": "u_070032",
+      "coverColor": "#fecaca",
+      "coverImage": null,
+      "createdAt": 1794040572279,
+      "status": "sold",
+      "views": 7
+    },
+    {
+      "id": "i_001",
+      "title": "高等数学同济第七版 上下册",
+      "desc": "上下册齐全，书页干净，只有少量铅笔笔记可以擦掉。期末复习够用，南海苑自提，也能送到教学楼。",
+      "price": 25,
+      "category": "教材书籍",
+      "condition": "轻微使用痕迹",
+      "campus": "崂山校区·南海苑",
+      "sellerName": "张三",
+      "sellerId": "u_zhangsan",
+      "coverColor": "#dbeafe",
+      "createdAt": 1793418049179,
+      "status": "on",
+      "views": 4
+    },
+    {
+      "id": "i_002",
+      "title": "捷安特山地车 九成新",
+      "desc": "自行车骑了半年，链条刚上过油，刹车灵敏，车筐和车锁一起送。东海苑楼下看车，试骑满意再给钱。",
+      "price": 480,
+      "category": "自行车",
+      "condition": "轻微使用痕迹",
+      "campus": "崂山校区·东海苑",
+      "sellerName": "李四",
+      "sellerId": "u_lisi",
+      "coverColor": "#fde68a",
+      "createdAt": 1793403649179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_003",
+      "title": "宿舍小冰箱 60L",
+      "desc": "宿舍用了一年半，制冷正常，声音不大，放饮料水果很够用。搬宿舍不好带走，北海苑自提，需要两个人抬。",
+      "price": 260,
+      "category": "生活用品",
+      "condition": "轻微使用痕迹",
+      "campus": "崂山校区·北海苑",
+      "sellerName": "孙七",
+      "sellerId": "u_sunqi",
+      "coverColor": "#c7f0d8",
+      "createdAt": 1793389249179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_004",
+      "title": "考研英语黄皮书全套",
+      "desc": "近三年真题加解析，全新未拆封，买重了一套。英语一，南海苑当面交易，考研的同学可以来看看。",
+      "price": 68,
+      "category": "教材书籍",
+      "condition": "全新",
+      "campus": "崂山校区·南海苑",
+      "sellerName": "张三",
+      "sellerId": "u_zhangsan",
+      "coverColor": "#fbcfe8",
+      "createdAt": 1793356849179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_005",
+      "title": "显示器 AOC 24寸",
+      "desc": "1080P 24 寸，含电源线和 HDMI 线，屏幕无坏点无亮点，写代码看剧都够用。鱼山校区自提，太重不邮寄。",
+      "price": 320,
+      "category": "数码电子",
+      "condition": "轻微使用痕迹",
+      "campus": "鱼山校区·学生公寓",
+      "sellerName": "周八",
+      "sellerId": "u_zhouba",
+      "coverColor": "#e0e7ff",
+      "createdAt": 1793335249179,
+      "status": "on",
+      "views": 1
+    },
+    {
+      "id": "i_006",
+      "title": "折叠桌椅",
+      "desc": "桌子加椅子一套，折叠后不占地方，适合租房或者宿舍加张学习桌。桌面有轻微划痕，不影响使用。",
+      "price": 60,
+      "category": "生活用品",
+      "condition": "明显使用痕迹",
+      "campus": "浮山校区",
+      "sellerName": "孙七",
+      "sellerId": "u_sunqi",
+      "coverColor": "#fed7aa",
+      "createdAt": 1793320849179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_007",
+      "title": "军训服（全新未拆）",
+      "desc": "军训前多买了一套，170 到 175 的身高都能穿，吊牌还在。南海苑自提，军训季临时缺衣服的同学可以救急。",
+      "price": 40,
+      "category": "生活用品",
+      "condition": "全新",
+      "campus": "崂山校区·南海苑",
+      "sellerName": "王五",
+      "sellerId": "u_wangwu",
+      "coverColor": "#bfdbfe",
+      "createdAt": 1793306449179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_008",
+      "title": "罗技无线鼠标",
+      "desc": "罗技 M170 无线鼠标，用了一个学期，按键和滚轮都正常，送一节新电池。北海苑当面交易。",
+      "price": 45,
+      "category": "数码电子",
+      "condition": "几乎全新",
+      "campus": "崂山校区·北海苑",
+      "sellerName": "周八",
+      "sellerId": "u_zhouba",
+      "coverColor": "#d9f99d",
+      "createdAt": 1793284849179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_009",
+      "title": "电风扇",
+      "desc": "宿舍落地扇，三档风速，风力足，声音在可接受范围。夏天过完用不上了，南海苑自提，价格可以小刀。",
+      "price": 35,
+      "category": "生活用品",
+      "condition": "轻微使用痕迹",
+      "campus": "崂山校区·南海苑",
+      "sellerName": "王五",
+      "sellerId": "u_wangwu",
+      "coverColor": "#fecaca",
+      "createdAt": 1793263249179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_010",
+      "title": "自行车头盔",
+      "desc": "骑车通勤买的头盔，只戴过几次，内衬可以拆下来洗。西海岸校区自提，通勤骑车的同学别省这笔钱。",
+      "price": 25,
+      "category": "其他",
+      "condition": "几乎全新",
+      "campus": "西海岸校区",
+      "sellerName": "李四",
+      "sellerId": "u_lisi",
+      "coverColor": "#a7f3d0",
+      "createdAt": 1793241649179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_011",
+      "title": "考研政治肖四肖八",
+      "desc": "肖四肖八加背诵手册，有几页划了重点，其余很干净。鱼山校区自提，也可以约在教学楼门口。",
+      "price": 30,
+      "category": "教材书籍",
+      "condition": "轻微使用痕迹",
+      "campus": "鱼山校区·学生公寓",
+      "sellerName": "赵六",
+      "sellerId": "u_zhaoliu",
+      "coverColor": "#ddd6fe",
+      "createdAt": 1793220049179,
+      "status": "on",
+      "views": 0
+    },
+    {
+      "id": "i_012",
+      "title": "雨伞+雨衣",
+      "desc": "海大雨水多，一把结实的折叠伞加一件一次性雨衣，伞骨完好没漏过。雨衣全新没拆，北海苑自提。",
+      "price": 20,
+      "category": "其他",
+      "condition": "全新",
+      "campus": "崂山校区·北海苑",
+      "sellerName": "赵六",
+      "sellerId": "u_zhaoliu",
+      "coverColor": "#fef08a",
+      "createdAt": 1793198449179,
+      "status": "on",
+      "views": 0
+    }
+  ],
+  "messages": [],
+  "users": [
+    {
+      "id": "u_zhangsan",
+      "name": "张三",
+      "campus": "崂山校区·南海苑",
+      "verified": true,
+      "itemsCount": 2
+    },
+    {
+      "id": "u_lisi",
+      "name": "李四",
+      "campus": "崂山校区·东海苑",
+      "verified": true,
+      "itemsCount": 2
+    },
+    {
+      "id": "u_sunqi",
+      "name": "孙七",
+      "campus": "崂山校区·北海苑",
+      "verified": true,
+      "itemsCount": 2
+    },
+    {
+      "id": "u_zhouba",
+      "name": "周八",
+      "campus": "鱼山校区·学生公寓",
+      "verified": true,
+      "itemsCount": 2
+    },
+    {
+      "id": "u_wangwu",
+      "name": "王五",
+      "campus": "崂山校区·南海苑",
+      "verified": true,
+      "itemsCount": 2
+    },
+    {
+      "id": "u_zhaoliu",
+      "name": "赵六",
+      "campus": "鱼山校区·学生公寓",
+      "verified": true,
+      "itemsCount": 2
+    },
+    {
+      "id": "u_self",
+      "name": "校园用户0823",
+      "campus": "崂山校区·南海苑",
+      "verified": true,
+      "studentId": "220100010823",
+      "realName": "校园用户0823",
+      "itemsCount": 0
+    }
+  ],
+  "comments": [
+    {
+      "id": "c_26bbad62-b296-4c6e-b798-5b1b72661d7d",
+      "itemId": "i_mw67ohpngi2s",
+      "itemTitle": "函数",
+      "userId": "u_zhangsan",
+      "userName": "张三",
+      "text": "这是我自己的商品，我觉得挺好的",
+      "createdAt": 1794044351969,
+      "deleted": false
+    }
+  ],
+  "reports": [],
+  "ratings": [],
+  "conversations": [
+    {
+      "itemId": "i_mw65fp13xlfq",
+      "buyerId": "u_zhangsan",
+      "sellerId": "u_070032",
+      "buyerName": "张三",
+      "sellerName": "等哈就",
+      "itemTitle": "高数",
+      "messages": [
+        {
+          "id": "m_1748cafa-af1a-40db-a4f4-7c10d3724b1d",
+          "from": "buyer",
+          "text": "我觉得这个商品挺好的",
+          "createdAt": 1794044378034
+        },
+        {
+          "id": "m_19679dd7-e61a-4456-81b5-a8134f2cb22c",
+          "from": "seller",
+          "text": "我也觉得",
+          "createdAt": 1794044406803
+        },
+        {
+          "id": "m_6fdff9dc-742f-4f2a-8507-4c0f66905731",
+          "from": "buyer",
+          "text": "那在哪里交易",
+          "createdAt": 1794044429233
+        },
+        {
+          "id": "m_08948e0b-14dd-4603-bfb6-4684b5a69509",
+          "from": "seller",
+          "text": "在学校吧",
+          "createdAt": 1794044441403
+        },
+        {
+          "id": "m_e242f732-6d87-4713-a167-cfe4ad8f65c7",
+          "from": "buyer",
+          "text": "行",
+          "createdAt": 1794044450407
+        }
+      ],
+      "buyerReadAt": 1794044447223,
+      "sellerReadAt": 1794044455001
+    }
+  ],
+  "favorites": [],
+  "historyEntries": [
+    {
+      "userId": "u_070032",
+      "itemId": "i_mw65fp13xlfq",
+      "viewedAt": 1794043580471
+    },
+    {
+      "userId": "u_070032",
+      "itemId": "i_001",
+      "viewedAt": 1794043583649
+    },
+    {
+      "userId": "u_zhangsan",
+      "itemId": "i_mw65fp13xlfq",
+      "viewedAt": 1794044384897
+    },
+    {
+      "userId": "u_zhangsan",
+      "itemId": "i_001",
+      "viewedAt": 1794044271540
+    },
+    {
+      "userId": "u_zhangsan",
+      "itemId": "i_005",
+      "viewedAt": 1794044276871
+    },
+    {
+      "userId": "u_zhangsan",
+      "itemId": "i_mw67ohpngi2s",
+      "viewedAt": 1794044369391
+    }
+  ],
+  "accounts": [
+    {
+      "id": "u_zhangsan",
+      "studentId": "220100010823",
+      "realName": "张三",
+      "nickname": "张三",
+      "campus": "崂山校区·南海苑",
+      "createdAt": 1735660800000,
+      "status": "normal",
+      "bannedUntil": 0,
+      "salt": "84c65c3f305df01259f116a33da8c4bd",
+      "passwordHash": "e9a723634888d82dc6fd072f8e3633c082d2aaf6909ef2da5acdd2f260a09dfb51b607cd87b0429340b7c86ed3806309af65358467a9c91df7b9b3431602ccae"
+    },
+    {
+      "id": "u_lisi",
+      "studentId": "220200020456",
+      "realName": "李四",
+      "nickname": "李四",
+      "campus": "崂山校区·东海苑",
+      "createdAt": 1735660800000,
+      "status": "normal",
+      "bannedUntil": 0,
+      "salt": "bbcd14115e9d5b6828e87120c89d2ac7",
+      "passwordHash": "3d65e0e1dc98908dac9a89612857531f7e69d821d2152c5acb3b592acb257e6118f38edfb16895fb206d5595176a8c9a868a37e4ba9e4634b1265f4bd3d0639f"
+    },
+    {
+      "id": "u_wangwu",
+      "studentId": "220300030789",
+      "realName": "王五",
+      "nickname": "王五",
+      "campus": "西海岸校区·听海苑",
+      "createdAt": 1735660800000,
+      "status": "normal",
+      "bannedUntil": 0,
+      "salt": "c4b1e0e126b91a6d5a7b44f374b0e557",
+      "passwordHash": "0120b49908efdf28e3cc59471c88ee17b065c98e93b132e207e96a74c44a7a1d426e00a9417f64e192869580bd09176675062efa462fb34344f9e5a6db97aa3f"
+    },
+    {
+      "id": "u_zhaoliu",
+      "studentId": "220400041122",
+      "realName": "赵六",
+      "nickname": "赵六",
+      "campus": "鱼山校区·学生公寓",
+      "createdAt": 1735660800000,
+      "status": "normal",
+      "bannedUntil": 0,
+      "salt": "28eb0d2fd6a7de9e06e108588d0afd67",
+      "passwordHash": "a9cf46ebfdb4502376bd59635242ec54ec45b9546cec778ec48eac85241cb9a90de36ee0370359ce50b3f9d98b9b31afebda6c67e69baa982b9c56a6f3db02af"
+    },
+    {
+      "id": "u_sunqi",
+      "studentId": "220500052233",
+      "realName": "孙七",
+      "nickname": "孙七",
+      "campus": "浮山校区",
+      "createdAt": 1735660800000,
+      "status": "normal",
+      "bannedUntil": 0,
+      "salt": "b109e258a7ad4cc67062c5a94a0af4c9",
+      "passwordHash": "bcc39552bad44d4fe87e31d81b658d495f92e70c815c0c11691b51308085fcb541c0d6a2adcf58c46f427e46ad510e55c5c29b34cae70e83688bcd728daa37e1"
+    },
+    {
+      "id": "u_zhouba",
+      "studentId": "220600063344",
+      "realName": "周八",
+      "nickname": "周八",
+      "campus": "西海岸校区·听海苑",
+      "createdAt": 1735660800000,
+      "status": "normal",
+      "bannedUntil": 0,
+      "salt": "f15921fe909d166c2d470c8429189b28",
+      "passwordHash": "e8eae148f89dea4a24a16078bc947b6bb18324132f013aadbead9066a53835899683c7729b64a0b5c22de1f6261b82ceb23d698a61dcb8077acf8a12750cae33"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "haidayiwu-server",
+  "version": "0.9.2",
+  "private": true,
+  "description": "海大易物 · 零依赖 Node.js REST 后端（校园二手交易演示）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "reset": "node -e \"require('fs').rmSync('data/db.json',{force:true})\""
+  },
+  "dependencies": {}
+}
