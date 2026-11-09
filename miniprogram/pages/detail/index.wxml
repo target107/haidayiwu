@@ -1,0 +1,150 @@
+<view class="page page-detail">
+  <view class="empty" wx:if="{{loading}}">
+    <view class="empty-main">加载中…</view>
+  </view>
+
+  <view class="empty" wx:if="{{notFound}}">
+    <view class="empty-main">物品不存在或已被删除</view>
+    <view class="empty-sub">返回首页看看其它闲置吧</view>
+  </view>
+
+  <block wx:if="{{item}}">
+    <view class="cover detail-cover" style="background:{{item.coverBg}}">
+      <image class="cover-img" wx:if="{{item.coverImage}}" src="{{item.coverImage}}" mode="aspectFill" />
+      <text class="cover-char" wx:else>{{item.coverChar}}</text>
+    </view>
+
+    <view class="detail-main">
+      <view class="detail-title-row">
+        <view class="detail-title">{{item.title}}</view>
+        <text class="state-tag state-{{statusClass}}" wx:if="{{statusTag}}">{{statusTag}}</text>
+        <!-- 举报：不显眼的小字按钮，未登录或自己的物品不出现 -->
+        <text class="report-link" wx:if="{{canReport}}" bindtap="onReportTap">举报</text>
+      </view>
+
+      <view class="detail-price-row">
+        <text class="detail-price">{{item.priceText}}</text>
+        <text class="detail-views">浏览 {{item.views}}</text>
+      </view>
+
+      <view class="attr-list card">
+        <view class="attr-row">
+          <text class="attr-key">成色</text>
+          <text class="attr-value">{{item.condition}}</text>
+        </view>
+        <view class="attr-row">
+          <text class="attr-key">分类</text>
+          <text class="attr-value">{{item.category}}</text>
+        </view>
+        <view class="attr-row">
+          <text class="attr-key">校区地点</text>
+          <text class="attr-value">{{item.campus}}</text>
+        </view>
+        <view class="attr-row">
+          <text class="attr-key">发布时间</text>
+          <text class="attr-value">{{item.timeText}}</text>
+        </view>
+        <view class="attr-row">
+          <text class="attr-key">状态</text>
+          <text class="attr-value">{{item.statusText}}</text>
+        </view>
+      </view>
+
+      <view class="seller-card card">
+        <view class="seller-avatar">{{item.sellerChar}}</view>
+        <view class="seller-info">
+          <view class="seller-name">{{item.sellerName}}{{mine ? '（我）' : ''}}</view>
+          <view class="seller-note">{{sellerNote}}</view>
+        </view>
+        <view class="btn-ghost small" wx:if="{{canContact}}" bindtap="goChat">私信</view>
+      </view>
+
+      <view class="desc-block card">
+        <view class="desc-title">物品描述</view>
+        <text class="desc-text">{{descText}}</text>
+      </view>
+
+      <!-- 评价卖家：已售出 + 当前用户是买家 + 已登录 才出现 -->
+      <view class="rate-entry card" wx:if="{{canRateSeller}}">
+        <view class="rate-entry-body">
+          <view class="rate-entry-title">这次交易还顺利吗？</view>
+          <view class="rate-entry-sub">给卖家一个信用评价，帮同学判断靠不靠谱</view>
+        </view>
+        <view class="btn-primary small {{ratedSeller ? 'is-disabled' : ''}}" bindtap="onOpenRate">{{ratedSeller ? '已评价' : '评价卖家'}}</view>
+      </view>
+
+      <!-- 评论区 -->
+      <view class="comment-block card">
+        <view class="cmt-head">
+          <text class="cmt-title">评论</text>
+          <text class="cmt-count">{{commentCount}} 条</text>
+        </view>
+
+        <view class="comment-list" wx:if="{{comments.length}}">
+          <view class="comment-item" wx:for="{{comments}}" wx:key="id">
+            <view class="comment-avatar">{{item.avatarChar}}</view>
+            <view class="comment-body">
+              <view class="cmt-meta">
+                <text class="comment-name">{{item.userName}}</text>
+                <text class="comment-time">{{item.timeText}}</text>
+              </view>
+              <view class="comment-text">{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="comment-empty" wx:else>
+          <text class="comment-empty-text">还没有评论，来说两句</text>
+        </view>
+
+        <view class="comment-form">
+          <input class="comment-input"
+                 value="{{commentText}}"
+                 maxlength="200"
+                 confirm-type="send"
+                 placeholder="{{loggedIn ? '说点什么…' : '登录后才能评论'}}"
+                 bindinput="onCommentInput"
+                 bindconfirm="onSubmitComment" />
+          <view class="btn-primary small comment-send" bindtap="onSubmitComment">发表</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="detail-bar" wx:if="{{item}}">
+    <view class="safe-tip">{{safeTip}}</view>
+    <view class="btn-ghost home-btn" bindtap="goHome">返回首页</view>
+    <view class="detail-actions">
+      <view class="btn-ghost fav-btn {{favorite ? 'is-fav' : ''}}" bindtap="onToggleFavorite">
+        <text class="fav-star">★</text>
+        <text>{{favoriteText}}</text>
+      </view>
+      <view class="btn-primary detail-contact" wx:if="{{canContact}}" bindtap="goChat">联系卖家</view>
+      <view class="self-tag" wx:elif="{{mine}}">这是你发布的物品</view>
+      <view class="self-tag" wx:else>{{statusTag}}，不再接受洽谈</view>
+    </view>
+  </view>
+
+  <!-- 评分弹层：1-5 星 + 一句话评语（点遮罩或取消都关掉） -->
+  <view class="rate-mask" wx:if="{{rateLayer}}" bindtap="onCloseRate"></view>
+  <view class="rate-panel" wx:if="{{rateLayer}}">
+    <view class="rate-panel-title">评价卖家</view>
+    <view class="rate-stars">
+      <text class="rate-star {{item.on ? 'is-on' : ''}}"
+            wx:for="{{starList}}"
+            wx:key="score"
+            data-score="{{item.score}}"
+            bindtap="onPickStar">★</text>
+    </view>
+    <view class="rate-score-text">{{rateScore ? rateScore + ' 分' : '点星星打分'}}</view>
+    <input class="rate-input"
+           value="{{rateComment}}"
+           maxlength="60"
+           placeholder="一句话评语（选填）"
+           bindinput="onRateCommentInput" />
+    <view class="rate-actions">
+      <view class="btn-ghost small" bindtap="onCloseRate">取消</view>
+      <view class="btn-primary small rate-submit" bindtap="onSubmitRating">提交评价</view>
+    </view>
+  </view>
+</view>

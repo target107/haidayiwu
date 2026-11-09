@@ -1,0 +1,286 @@
+/* 我的：深色头部身份卡 + 统计 + 两个列表（我发布的 / 我收藏的） */
+
+.mine-head {
+  display: flex;
+  align-items: center;
+  padding: 40rpx 32rpx;
+  background: linear-gradient(135deg, #0f766e 0%, #0e7490 100%);
+  color: #ffffff;
+}
+
+.mine-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.mine-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-left: 24rpx;
+}
+
+.mine-name {
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.mine-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  opacity: 0.92;
+}
+
+.mine-meta-item {
+  margin-right: 12rpx;
+}
+
+.badge {
+  margin-right: 12rpx;
+  padding: 2rpx 14rpx;
+  border-radius: 999rpx;
+  background: #ecfdf5;
+  color: #047857;
+  font-weight: 600;
+}
+
+/* 信用评价：平均分 + 条数，跟在身份信息下面一行 */
+.mine-rating {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.mine-stats {
+  display: flex;
+  padding: 28rpx 0;
+  background: #ffffff;
+  border-bottom: 1rpx solid #e6eaee;
+}
+
+.stat {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.stat-label {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: #6b7280;
+}
+
+/* 登录态操作：切换账号 / 退出登录（两个按钮行为一致） */
+.mine-account-actions {
+  display: flex;
+  margin: 24rpx 24rpx 0;
+}
+
+.mine-account-btn {
+  flex: 1 1 0;
+  font-size: 26rpx;
+}
+
+.mine-account-btn + .mine-account-btn {
+  margin-left: 20rpx;
+  color: #b91c1c;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.mine-body {
+  padding: 8rpx 24rpx 40rpx;
+}
+
+.mine-section {
+  margin-top: 32rpx;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 16rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.section-count {
+  margin-left: 16rpx;
+  font-size: 22rpx;
+  color: #6b7280;
+}
+
+.row-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+.row-link {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.row-thumb {
+  flex: 0 0 auto;
+  width: 112rpx;
+  height: 112rpx;
+}
+
+.row-thumb .cover-char {
+  font-size: 36rpx;
+}
+
+.row-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-left: 20rpx;
+}
+
+.row-title {
+  font-size: 26rpx;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.row-price {
+  margin-top: 4rpx;
+  color: #d9480f;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.row-meta {
+  display: flex;
+  align-items: center;
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: #6b7280;
+}
+
+.state-tag {
+  margin-right: 12rpx;
+  padding: 0 12rpx;
+  border-radius: 8rpx;
+}
+
+.state-on {
+  background: #ccfbf1;
+  color: #115e59;
+}
+
+.state-off {
+  background: #f1f3f5;
+  color: #6b7280;
+}
+
+.state-sold {
+  background: #fff7ed;
+  color: #b45309;
+}
+
+.row-actions {
+  flex: 0 0 auto;
+  margin-left: 16rpx;
+}
+
+/* 消息中心入口卡片 */
+.mine-entry {
+  display: flex;
+  align-items: center;
+  margin: 0 24rpx 24rpx;
+  padding: 28rpx 24rpx;
+}
+
+.mine-entry-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mine-entry-title {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.mine-entry-sub {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: #6b7280;
+}
+
+.mine-entry-right {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.mine-entry-badge {
+  min-width: 36rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 20rpx;
+  line-height: 34rpx;
+  text-align: center;
+}
+
+.mine-entry-count {
+  color: #0f766e;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.mine-entry-arrow {
+  margin-left: 12rpx;
+  color: #9aa2ab;
+  font-size: 32rpx;
+}
+
+/* 已售出：按钮置灰不可点（点击时 JS 里再拦一层） */
+.row-actions .is-disabled {
+  border-color: #e6eaee;
+  background: #f7f9fa;
+  color: #9aa2ab;
+}
+
+/* 课程作业声明（与项目"非官方、不提供真实服务"的定位一致） */
+.course-note {
+  margin: 40rpx 24rpx 60rpx;
+  padding: 24rpx;
+  background: #f4f6f7;
+  border-radius: 16rpx;
+  font-size: 22rpx;
+  line-height: 1.7;
+  color: #6b7280;
+  text-align: center;
+}
